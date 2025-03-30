@@ -2,7 +2,7 @@ local wezterm = require('wezterm')
 
 return {
   -- Launch into WSL (change "Ubuntu" if needed)
-  default_prog = { "wsl.exe", "--distribution", "Ubuntu", "--cd", "~" },
+  default_prog = { "wsl.exe", "--cd", "~"},
 
   -- Better terminfo support for tmux + neovim
   term = "xterm-256color",
