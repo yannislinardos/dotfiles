@@ -80,7 +80,7 @@ fi
 # Custom aliases
 alias cat="bat --paging=never"
 alias ls="exa"
-alias ll="exa -alh"
+alias ll="ls -alh"
 alias la='ls -A'
 alias htop="btop"
 
