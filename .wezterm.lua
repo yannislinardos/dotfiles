@@ -37,4 +37,17 @@ return {
   },
 
   audible_bell = "Disabled",
+
+  -- Make URLs clickable
+  hyperlink_rules = {
+    {
+      regex = [[\bhttps?://[^\s]+]],
+      format = '$0',
+    },
+    {
+      regex = [[\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b]],
+      format = 'mailto:$0',
+    },
+  },
+
 }
