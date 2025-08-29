@@ -113,3 +113,23 @@ eval $(thefuck --alias)
 
 export HOMEBREW_GIT_PATH=$(which git)
 
+# enable vi keybindings in bash
+set -o vi
+
+# change cursor on mode switch
+bind 'set show-mode-in-prompt on'
+# INSERT mode → thin bar
+bind 'set vi-ins-mode-string "\1\e[6 q\2"'
+# NORMAL mode → block
+bind 'set vi-cmd-mode-string "\1\e[2 q\2"'
+
+# Map Ctrl-l to clear the screen (both vi insert & command modes)
+bind -m vi-insert '"\C-l": clear-screen'
+bind -m vi-command '"\C-l": clear-screen'
+
+# map 'jj' in vi insert mode to Escape (exit to command mode)
+bind -m vi-insert '"jj": vi-movement-mode'
+
+# disable 'v' opening $EDITOR (no accidental nano)
+bind -m vi-command -r v
+
